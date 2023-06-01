@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+*.pyc
+docs/build/
+celerybeat.pid
+celerybeat-schedule.db
+
+configs/uwsgi.ini
+configs/celery.conf
+
+
+log/*
+!log/.gitkeep

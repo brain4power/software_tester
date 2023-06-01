@@ -1,0 +1,5 @@
+pyjwt[crypto]==2.3.0
+psycopg2-binary==2.9.6
+django==4.0.4
+# Lamb
+git+https://bitbucket.org/kovsyk/lamb-core.git@v3.0.6#egg=lamb

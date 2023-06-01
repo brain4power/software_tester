@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  pg:
+    image: postgres:14.6
+    container_name: pg
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./volumes/pg/data/:/var/lib/postgresql/data/
+      - ./configs/local/pg/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - "${APP_POSTGRES_PORT}:5432"
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U $${POSTGRES_USER}' ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # broker
+  redis:
+    image: redis:alpine3.17
+    container_name: redis
+    restart: always
+    command: [ "redis-server" ]
+    env_file:
+      - .env
+    ports:
+      - "${APP_REDIS_BASE_PORT}:6379"
+    healthcheck:
+      test: [ "CMD-SHELL", "redis-cli -c ping" ]
+      interval: 10s
+      timeout: 1s
+      retries: 5
+
+networks:
+  default:
+    driver: bridge

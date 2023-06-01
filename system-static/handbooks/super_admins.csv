@@ -1,0 +1,2 @@
+email;password_hash;is_email_confirmed;last_name;first_name;is_confirmed
+super_admin@example.com;StrongPass777;TRUE;super;admin;TRUE

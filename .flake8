@@ -1,0 +1,8 @@
+[flake8]
+show-source = true
+max-line-length = 120
+extend-ignore = E203,E712
+per-file-ignores =
+    core/settings.py: F405
+    core/urls.py: RST201,RST301,RST203
+    api/model.py: E501
