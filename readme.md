@@ -1,5 +1,6 @@
 [![Python 3.10.10](https://img.shields.io/badge/python-3.10.10-blue.svg)](https://www.python.org/downloads/release/python-31010/)
 
+# На данный момент отбор на стажировку завершен.
 ## How to run app
 1. up DB and broker
 ```shell
